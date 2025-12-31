@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create and Manipulate DOM Elements</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        .box {
+            background-color: white;
+            border: 2px solid black;
+            padding: 20px;
+            width: 400px;
+            margin: auto;
+        }
+
+        button {
+            margin: 5px;
+            padding: 5px 10px;
+        }
+    </style>
+
+    <script>
+        // Append (Add) a new child
+        function addItem() {
+            var list = document.getElementById("myList");
+            var item = document.createElement("li");
+            item.innerHTML = "New Item";
+            list.appendChild(item);
+        }
+
+        // Remove last child
+        function removeItem() {
+            var list = document.getElementById("myList");
+            if (list.children.length > 0) {
+                list.removeChild(list.lastElementChild);
+            } else {
+                alert("No item to remove");
+            }
+        }
+
+        // Modify first child
+        function modifyItem() {
+            var list = document.getElementById("myList");
+            if (list.children.length > 0) {
+                list.firstElementChild.innerHTML = "Modified Item";
+            } else {
+                alert("No item to modify");
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <div class="box">
+        <h2>DOM Manipulation Example</h2>
+
+        <ul id="myList">
+            <li>Item 1</li>
+            <li>Item 2</li>
+        </ul>
+
+        <button onclick="addItem()">Append Item</button>
+        <button onclick="removeItem()">Remove Item</button>
+        <button onclick="modifyItem()">Modify Item</button>
+    </div>
+
+</body>
+</html>

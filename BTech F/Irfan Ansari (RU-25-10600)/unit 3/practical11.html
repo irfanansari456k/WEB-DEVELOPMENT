@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Arithmetic Operations</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f2f2f2;
+        }
+
+        .box {
+            width: 300px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border: 2px solid black;
+            text-align: center;
+        }
+
+        input {
+            width: 90%;
+            padding: 5px;
+            margin: 5px 0;
+        }
+
+        button {
+            margin: 5px;
+            padding: 5px 10px;
+        }
+    </style>
+
+    <script>
+        function calculate(operation) {
+            var a = parseFloat(document.getElementById("num1").value);
+            var b = parseFloat(document.getElementById("num2").value);
+            var result;
+
+            if (operation == "add")
+                result = a + b;
+            else if (operation == "sub")
+                result = a - b;
+            else if (operation == "mul")
+                result = a * b;
+            else if (operation == "div")
+                result = a / b;
+
+            document.getElementById("result").value = result;
+        }
+    </script>
+</head>
+
+<body>
+
+    <div class="box">
+        <h2>Simple Calculator</h2>
+
+        <input type="text" id="num1" placeholder="Enter first number">
+        <input type="text" id="num2" placeholder="Enter second number">
+
+        <br>
+
+        <button onclick="calculate('add')">Add</button>
+        <button onclick="calculate('sub')">Subtract</button>
+        <button onclick="calculate('mul')">Multiply</button>
+        <button onclick="calculate('div')">Divide</button>
+
+        <br><br>
+
+        Result:
+        <input type="text" id="result" readonly>
+    </div>
+
+</body>
+</html>

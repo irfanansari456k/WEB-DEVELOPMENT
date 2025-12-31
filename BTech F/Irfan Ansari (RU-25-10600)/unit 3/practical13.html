@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Functions & Scope</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+            background-color: #f2f2f2;
+        }
+
+        .box {
+            background-color: white;
+            border: 2px solid black;
+            padding: 20px;
+            margin: 20px auto;
+            width: 400px;
+        }
+
+        button {
+            padding: 5px 10px;
+            margin-top: 5px;
+        }
+
+        p {
+            font-weight: bold;
+        }
+    </style>
+
+    <script>
+        // User-defined function: add two numbers
+        function addNumbers(a, b) {
+            return a + b;
+        }
+
+        // User-defined function: demonstrate var, let, const
+        function scopeDemo() {
+            var x = 10;       // function scoped
+            let y = 20;       // block scoped
+            const z = 30;     // block scoped, constant
+
+            var output = "Inside function:\n";
+            output += "var x = " + x + "\n";
+            output += "let y = " + y + "\n";
+            output += "const z = " + z + "\n";
+
+            document.getElementById("scopeResult").innerText = output;
+        }
+    </script>
+</head>
+
+<body>
+
+    <div class="box">
+        <h2>User-Defined Function</h2>
+        <button onclick="document.getElementById('addResult').innerText = 'Sum = ' + addNumbers(5, 7)">
+            Add 5 + 7
+        </button>
+        <p id="addResult"></p>
+    </div>
+
+    <div class="box">
+        <h2>Variable Scope Demo</h2>
+        <button onclick="scopeDemo()">Show Scope</button>
+        <pre id="scopeResult"></pre>
+    </div>
+
+</body>
+</html>

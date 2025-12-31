@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Canvas Drawing Example</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background-color: #f2f2f2;
+        }
+
+        canvas {
+            border: 2px solid black;
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>HTML Canvas Drawing</h2>
+
+    <canvas id="myCanvas" width="400" height="300"></canvas>
+
+    <script>
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+
+        /* Rectangle */
+        ctx.fillStyle = "lightblue";
+        ctx.fillRect(20, 20, 100, 60);
+
+        /* Circle */
+        ctx.beginPath();
+        ctx.arc(200, 60, 30, 0, 2 * Math.PI);
+        ctx.fillStyle = "red";
+        ctx.fill();
+
+        /* Line */
+        ctx.beginPath();
+        ctx.moveTo(20, 150);
+        ctx.lineTo(300, 150);
+        ctx.strokeStyle = "green";
+        ctx.stroke();
+
+        /* Text */
+        ctx.font = "16px Arial";
+        ctx.fillStyle = "black";
+        ctx.fillText("Canvas Example", 120, 220);
+    </script>
+
+</body>
+</html>

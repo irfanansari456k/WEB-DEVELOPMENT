@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Conditional & Loops</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+            background-color: #f2f2f2;
+        }
+
+        .box {
+            background-color: white;
+            border: 2px solid black;
+            padding: 20px;
+            margin: 20px auto;
+            width: 400px;
+        }
+
+        input {
+            width: 80%;
+            padding: 5px;
+            margin: 5px 0;
+        }
+
+        button {
+            padding: 5px 10px;
+            margin-top: 5px;
+        }
+
+        pre {
+            background: #e9e9e9;
+            padding: 10px;
+        }
+    </style>
+
+    <script>
+        // Conditional Statement Example
+        function checkNumber() {
+            var num = parseInt(document.getElementById("num").value);
+            var message;
+
+            if(num > 0) {
+                message = "The number is Positive";
+            } else if(num < 0) {
+                message = "The number is Negative";
+            } else {
+                message = "The number is Zero";
+            }
+
+            document.getElementById("condResult").innerText = message;
+        }
+
+        // Loop Examples
+        function runLoops() {
+            var n = parseInt(document.getElementById("loopNum").value);
+            var output = "";
+
+            // For loop
+            output += "For loop: ";
+            for(var i=1; i<=n; i++) {
+                output += i + " ";
+            }
+            output += "\n";
+
+            // While loop
+            output += "While loop: ";
+            var j=1;
+            while(j<=n) {
+                output += j + " ";
+                j++;
+            }
+            output += "\n";
+
+            // Do…While loop
+            output += "Do…While loop: ";
+            var k=1;
+            do {
+                output += k + " ";
+                k++;
+            } while(k<=n);
+
+            document.getElementById("loopResult").innerText = output;
+        }
+    </script>
+</head>
+
+<body>
+
+    <div class="box">
+        <h2>Conditional Statements</h2>
+        Enter a number:
+        <input type="text" id="num" placeholder="Enter number">
+        <br>
+        <button onclick="checkNumber()">Check Number</button>
+        <p id="condResult" style="font-weight:bold;"></p>
+    </div>
+
+    <div class="box">
+        <h2>Loop Statements</h2>
+        Enter a number:
+        <input type="text" id="loopNum" placeholder="Enter number">
+        <br>
+        <button onclick="runLoops()">Run Loops</button>
+        <pre id="loopResult"></pre>
+    </div>
+
+</body>
+</html>

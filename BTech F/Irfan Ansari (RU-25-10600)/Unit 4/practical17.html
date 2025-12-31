@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Listeners Demo</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+            background-color: #f2f2f2;
+        }
+
+        .box {
+            background-color: white;
+            border: 2px solid black;
+            padding: 20px;
+            margin: 20px auto;
+            width: 400px;
+            text-align: center;
+        }
+
+        button {
+            margin: 5px;
+            padding: 5px 10px;
+        }
+
+        #msg {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+
+    <script>
+        function mouseOverHandler() {
+            document.getElementById("msg").innerText = "Mouse is over the box!";
+        }
+
+        function mouseOutHandler() {
+            document.getElementById("msg").innerText = "Mouse left the box!";
+        }
+
+        function keyPressHandler(event) {
+            document.getElementById("msg").innerText = "You pressed: " + event.key;
+        }
+
+        // Add event listeners
+        function addEvents() {
+            var box = document.getElementById("eventBox");
+            box.addEventListener("mouseover", mouseOverHandler);
+            box.addEventListener("mouseout", mouseOutHandler);
+            document.addEventListener("keypress", keyPressHandler);
+            alert("Event listeners added!");
+        }
+
+        // Remove event listeners
+        function removeEvents() {
+            var box = document.getElementById("eventBox");
+            box.removeEventListener("mouseover", mouseOverHandler);
+            box.removeEventListener("mouseout", mouseOutHandler);
+            document.removeEventListener("keypress", keyPressHandler);
+            alert("Event listeners removed!");
+        }
+    </script>
+</head>
+
+<body>
+
+    <div class="box" id="eventBox">
+        <h2>Event Listeners Demo</h2>
+        <p>Move your mouse over this box or press any key.</p>
+        <div id="msg"></div>
+        <button onclick="addEvents()">Add Event Listeners</button>
+        <button onclick="removeEvents()">Remove Event Listeners</button>
+    </div>
+
+</body>
+</html>

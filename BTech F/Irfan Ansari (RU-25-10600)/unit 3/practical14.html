@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation with JavaScript</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+            background-color: #f2f2f2;
+        }
+
+        .box {
+            background-color: white;
+            border: 2px solid black;
+            padding: 20px;
+            margin: 20px auto;
+            width: 400px;
+        }
+
+        input {
+            width: 90%;
+            padding: 5px;
+            margin: 5px 0;
+        }
+
+        button {
+            padding: 5px 10px;
+            margin-top: 5px;
+        }
+    </style>
+
+    <script>
+        // Onsubmit validation
+        function validateForm(event) {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+
+            if(name == "" || email == "") {
+                alert("Please fill in all fields!");
+                event.preventDefault(); // prevent form submission
+                return false;
+            }
+
+            alert("Form submitted successfully!");
+            return true;
+        }
+
+        // Oninput validation
+        function checkName() {
+            var name = document.getElementById("name").value;
+            if(name.length < 3) {
+                alert("Name must be at least 3 characters!");
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <div class="box">
+        <h2>Registration Form</h2>
+
+        <form onsubmit="validateForm(event)">
+
+            Name: <br>
+            <input type="text" id="name" oninput="checkName()" placeholder="Enter name"><br>
+
+            Email: <br>
+            <input type="text" id="email" placeholder="Enter email"><br>
+
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+
+        </form>
+    </div>
+
+</body>
+</html>
