@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Web Page</title>
+
+    <style>
+        /* Mobile-first base styles */
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 1rem;
+        }
+
+        header {
+            background: #2c7be5;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        nav {
+            background: #f2f2f2;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav a {
+            display: block;
+            margin: 0.5rem 0;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .container {
+            margin-top: 1rem;
+        }
+
+        .card {
+            background: #e9f1ff;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 0.5rem;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+        }
+
+        /* Tablet view (min-width: 600px) */
+        @media (min-width: 600px) {
+            nav a {
+                display: inline-block;
+                margin: 0 1rem;
+            }
+
+            .container {
+                display: flex;
+                gap: 1rem;
+            }
+
+            .card {
+                width: 50%;
+            }
+        }
+
+        /* Desktop view (min-width: 900px) */
+        @media (min-width: 900px) {
+            body {
+                padding: 2vw;
+            }
+
+            .card {
+                width: 33.33%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Responsive Web Page</h1>
+        <p>Mobile First Design</p>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <div class="container">
+        <div class="card">Content Box 1</div>
+        <div class="card">Content Box 2</div>
+        <div class="card">Content Box 3</div>
+    </div>
+
+    <footer>
+        © 2025 Web Technology Practical
+    </footer>
+
+</body>
+</html>

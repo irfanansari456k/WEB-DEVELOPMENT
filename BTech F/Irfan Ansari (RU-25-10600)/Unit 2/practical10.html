@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Div and Span Example</title>
+
+    <style>
+        body {
+            font-family: Arial;
+        }
+
+        /* div = block level element */
+        .container {
+            width: 80%;
+            margin: auto;
+            border: 2px solid black;
+            padding: 10px;
+        }
+
+        .header {
+            background-color: lightblue;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .content {
+            background-color: #f2f2f2;
+            padding: 15px;
+            margin-top: 10px;
+        }
+
+        /* span = inline element */
+        .highlight {
+            color: red;
+            font-weight: bold;
+        }
+
+        .note {
+            background-color: yellow;
+        }
+
+        .footer {
+            background-color: lightgray;
+            text-align: center;
+            padding: 8px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="header">
+            <h1>Div and Span Layout</h1>
+        </div>
+
+        <div class="content">
+            <p>
+                This is a <span class="highlight">div</span> based layout example.
+                The <span class="note">span tag</span> is used to style inline text.
+            </p>
+        </div>
+
+        <div class="footer">
+            © 2025 Web Technology Practical
+        </div>
+
+    </div>
+
+</body>
+</html>
