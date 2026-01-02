@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>var, let, const Demo</title>
+</head>
+<body>
+
+<h2>Difference between var, let and const</h2>
+<pre id="output"></pre>
+
+<script>
+    let result = "";
+
+    // 🔹 var example (function scope + hoisting)
+    function varExample() {
+        result += "VAR EXAMPLE\n";
+        result += "Before declaration: " + x + "\n";
+        var x = 10;
+        result += "After declaration: " + x + "\n\n";
+    }
+    varExample();
+
+    // 🔹 let example (block scope)
+    result += "LET EXAMPLE\n";
+    {
+        let y = 20;
+        result += "Inside block: " + y + "\n";
+    }
+    result += "Outside block: y is not accessible\n\n";
+
+    // 🔹 const example (block scope + no reassignment)
+    result += "CONST EXAMPLE\n";
+    const z = 30;
+    result += "Constant value: " + z + "\n";
+    result += "Reassignment not allowed\n\n";
+
+    document.getElementById("output").innerText = result;
+</script>
+
+</body>
+</html>

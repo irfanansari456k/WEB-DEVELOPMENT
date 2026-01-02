@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Control Flow Statements</title>
+</head>
+<body>
+
+<h2>JavaScript Control Flow – Loops Demo</h2>
+<pre id="output"></pre>
+
+<script>
+    let result = "";
+
+    // FOR LOOP
+    result += "FOR LOOP\n";
+    for (let i = 1; i <= 3; i++) {
+        result += "i = " + i + "\n";
+    }
+
+    result += "\nWHILE LOOP\n";
+    // WHILE LOOP
+    let j = 1;
+    while (j <= 3) {
+        result += "j = " + j + "\n";
+        j++;
+    }
+
+    result += "\nDO WHILE LOOP\n";
+    // DO WHILE LOOP
+    let k = 1;
+    do {
+        result += "k = " + k + "\n";
+        k++;
+    } while (k <= 3);
+
+    document.getElementById("output").innerText = result;
+</script>
+
+</body>
+</html>
