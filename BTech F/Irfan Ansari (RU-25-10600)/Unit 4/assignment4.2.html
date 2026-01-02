@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Promises and Async/Await Demo</title>
+</head>
+<body>
+
+<h2>JavaScript Promises and async/await</h2>
+
+<button onclick="promiseExample()">Run Promise</button>
+<button onclick="asyncAwaitExample()">Run async/await</button>
+
+<p id="output"></p>
+
+<script>
+    // PROMISE EXAMPLE
+    function promiseExample() {
+        document.getElementById("output").innerHTML = "Promise is running...";
+
+        let myPromise = new Promise(function(resolve, reject) {
+            setTimeout(() => {
+                resolve("Promise resolved successfully!");
+            }, 2000);
+        });
+
+        myPromise
+            .then(result => {
+                document.getElementById("output").innerHTML = result;
+            })
+            .catch(error => {
+                document.getElementById("output").innerHTML = error;
+            });
+    }
+
+    // ASYNC / AWAIT EXAMPLE
+    function getData() {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                resolve("Data received using async/await!");
+            }, 2000);
+        });
+    }
+
+    async function asyncAwaitExample() {
+        document.getElementById("output").innerHTML = "async/await is running...";
+        let result = await getData();
+        document.getElementById("output").innerHTML = result;
+    }
+</script>
+
+</body>
+</html>

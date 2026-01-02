@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Delegation Demo</title>
+</head>
+<body>
+
+<h2>Event Delegation using addEventListener</h2>
+<p>Click any item below:</p>
+
+<ul id="itemList">
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+</ul>
+
+<p id="result"></p>
+
+<script>
+    // Parent element par ek hi event listener
+    document.getElementById("itemList").addEventListener("click", function(event) {
+
+        // Check karo ki click LI par hua hai ya nahi
+        if (event.target.tagName === "LI") {
+            document.getElementById("result").innerHTML =
+                "You clicked on: " + event.target.innerHTML;
+        }
+
+    });
+</script>
+
+</body>
+</html>
